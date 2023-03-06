@@ -1,0 +1,1 @@
+Directory contains introductory projects pertaining to python programming language.
