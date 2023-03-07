@@ -7,4 +7,3 @@ def uppercase(str):
             offset_value = 0
         print("{:c}".format(ord(str[i]) - offset_value), end='')
     print()
-            
