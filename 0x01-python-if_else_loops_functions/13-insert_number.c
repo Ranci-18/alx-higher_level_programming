@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 /**
- *insert_node: inserts a new value in a sorted linked list
+ *insert_node - inserts a new value in a sorted linked list
  *@head: pointer to head pointer
  *@number: value to be inserted
  *
@@ -22,28 +22,27 @@ listint_t *insert_node(listint_t **head, int number)
 	new->n = number;
 	new->next = NULL;
 
-	if (*head == NULL)
+	while (current != NULL)
 	{
-		*head = new;
-		free (new);
-		return (new);
-	}
-
-	while (current != NULL && current->n < number)
-	{
+		if (current->n > number)
+			break;
 		prev = current;
 		current = current->next;
 	}
-	if (prev == NULL)
+
+	if (*head == NULL)
 	{
-		new->next = *head;
+		new->next = NULL;
 		*head = new;
 	}
 	else
 	{
-		prev->next = new;
 		new->next = current;
+		if (current == *head)
+			*head = new;
+		else
+			prev->next = new;
+
 	}
-	free (new);
 	return (new);
 }
