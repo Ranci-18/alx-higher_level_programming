@@ -1,4 +1,6 @@
 #!/usr/bin/python3
 import add_0 as add
-sum = add.add(1, 2)
-print("{:d} + {:d} = {:d}".format(1, 2, sum))
+a = 1
+b = 2
+sum = add.add(a, b)
+print("{:d} + {:d} = {:d}".format(a, b, sum))
