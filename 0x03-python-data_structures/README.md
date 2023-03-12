@@ -1,0 +1,1 @@
+Directory contains tasks concerning python data structures: tuples and lists.
