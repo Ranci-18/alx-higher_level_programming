@@ -5,9 +5,9 @@ def max_integer(my_list=[]):
 
     if list_len == 0:
         return None
-    else:
-        for i in range(list_len):
-            if my_list[i] > biggest_int:
-                biggest_int = my_list[i]
 
-        return biggest_int
+    for i in range(1, list_len):
+        if my_list[i] > biggest_int:
+            biggest_int = my_list[i]
+
+    return biggest_int
