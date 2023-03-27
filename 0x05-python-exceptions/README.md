@@ -1,0 +1,1 @@
+The directory contains task projects pertaining to python exceptions completed by dev Frank Ng'ang'a.
