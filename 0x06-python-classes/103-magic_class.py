@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """definition of MagicClass"""
-
-
 import math
+
+
 class MagicClass:
     """MagicClass performs some operations
     """
