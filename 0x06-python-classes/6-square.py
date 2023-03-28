@@ -57,16 +57,15 @@ class Square:
 
         Raises: TypeError for failed conditions
         """
-        if type(value) != tuple:
+        if not isinstance(value, tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif len(value) != 2:
+        if len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif type(value[0]) != int or type(value[1] != int):
+        if type(value[0]) != int or type(value[1] != int):
             raise TypeError("position must be a tuple of 2 positive integers")
-        elif value[0] < 0 or value[1] < 0:
+        if value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
+        self.__position = value
 
     def my_print(self):
         """
