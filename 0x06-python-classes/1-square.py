@@ -12,6 +12,6 @@ class Square:
         """
         creates first instance of Square
 
-        Atrgs: size
+        Args: size
         """
-        self._size = size
+        self.__size = size
