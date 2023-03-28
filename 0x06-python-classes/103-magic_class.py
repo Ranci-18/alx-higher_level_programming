@@ -11,7 +11,7 @@ class MagicClass:
 
         Attributes: radius
         """
-        if not isinstance(radius, int) or not isinstance(radius, float):
+        if not isinstance(radius, int) and not isinstance(radius, float):
             raise TypeError("Radius must be a number")
         self.__radius = radius
 
