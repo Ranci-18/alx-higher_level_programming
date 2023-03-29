@@ -26,7 +26,7 @@ class MagicClass:
         """sets the radius of MagicClass
         """
         if type(value) is not int and type(value) is not float:
-            raise TypeError('Radius must be a number')
+            raise TypeError('radius must be a number')
         self.__radius = value
 
     def area(self):
