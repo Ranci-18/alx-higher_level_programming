@@ -8,6 +8,24 @@ class Square:
 
     Attributes: size
     """
+    def __eq__(self, other):
+        return self.__size == other.__size
+    
+    def __ne__(self, other):
+        return self.__size != other.__size
+    
+    def __lt__(self, other):
+        return self.__size < other.__size
+    
+    def __le__(self, other):
+        return self.__size <= other.__size
+    
+    def __gt__(self, other):
+        return self.__size > other.__size
+    
+    def __ge__(self, other):
+        return self.__size >= other.__size
+
     def __init__(self, size=0):
         """
         creates first instance of Square
@@ -20,24 +38,6 @@ class Square:
             raise ValueError("size must be >= 0")
         else:
             self.__size = int(size)
-    
-    def __eq__(self, other):
-        return self.__size == other.__size
-    
-    def __neq__(self, other):
-        return self.__size != other.__size
-    
-    def __lt__(self, other):
-        return self.__size < other.__size
-    
-    def __lteq__(self, other):
-        return self.__size <= other.__size
-    
-    def __gt__(self, other):
-        return self.__size > other.__size
-    
-    def __gteq__(self, other):
-        return self.__size >= other.__size
 
     def area(self):
         """public method computing the area of square
