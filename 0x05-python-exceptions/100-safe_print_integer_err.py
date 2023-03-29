@@ -4,8 +4,10 @@ def safe_print_integer_err(value):
     if isinstance(value, int):
         try:
             print("{:d}".format(value))
-        except Exception as err:
+            return True
+        except ValueError as err:
             sys.stderr.write("Exception: {}\n".format(err))
             return False
-        else:
-            return True
+        except TypeError:
+            sys.stderr.write("Exception: unsupported format string passed to set.__format__\n")
+            return False
