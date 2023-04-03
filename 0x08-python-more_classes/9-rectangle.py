@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""creating a class Rectangle"""
+"""creating a class Rectangle
+Class recreates an actual rectangle with its most basic attributes
+"""
 
 
 class Rectangle:
