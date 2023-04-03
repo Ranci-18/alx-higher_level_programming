@@ -1,4 +1,4 @@
-0;276;0c#!/usr/bin/python3                                                                                                                         
+#!/usr/bin/python3
 """creating a class Rectangle"""
 
 
@@ -6,7 +6,7 @@ class Rectangle:
     """Class Rectangle representing a rectangle"""
     def __init__(self, width=0, height=0):
         """Instantiation of object
-        Atributes: width and height                                                                                                    
+        Attributes: width and height
         """
         self.__width = width
         if not isinstance(self.__width, int):
@@ -47,3 +47,15 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def area(self):
+        """Method computes the area of the rectangle
+        """
+        return self.__height * self.__width
+
+    def perimeter(self):
+        """Method computes the perimeter of the rectangle
+        """
+        if self.__height == 0 or self.__width == 0:
+            return 0
+        return 2 * (self.__width + self.__height)
