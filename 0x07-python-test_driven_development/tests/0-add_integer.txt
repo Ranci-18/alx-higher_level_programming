@@ -48,11 +48,11 @@ when None is passed
             ...
     TypeError: a must be an integer
 
-when nan is passed
-    >>> add_integer(nan)
+adding int with nan
+    >>> add_integer(float("nan"), 4)
     Traceback (most recent call last):
             ...
-    ValueError: cannot convert float nan to integer
+    ValueError: cannot convert float NaN to integer
 
 passing a bool
     >>> add_integer(True)
