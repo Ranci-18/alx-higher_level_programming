@@ -7,9 +7,8 @@ add_integer function takes and adds two numbers and returns the resultant value 
 'a' and 'b' are type casted first if they are float.
 default value of 'b' is '98'.
 
-Importing using:
+Import using:
     >>> add_integer = __import__('0-add_integer').add_integer
-
 
 Test Cases
 ==========
@@ -23,7 +22,6 @@ adding -1 and -2
     -3
 
 adding integer and float/float and integer
-
     >>> add_integer(1, 2.2)
     3
 
@@ -50,11 +48,11 @@ when None is passed
             ...
     TypeError: a must be an integer
 
-when NaN is passed
-    >>> add_integer(NaN)
+when nan is passed
+    >>> add_integer(nan)
     Traceback (most recent call last):
             ...
-    TypeError: a must be an integer
+    ValueError: cannot convert float nan to integer
 
 passing a bool
     >>> add_integer(True)
@@ -64,7 +62,7 @@ passing a bool
     98
 
 adding 2 and a bool
-    >>> add_integer(2, True)
+    >>> add_integer(True, 2)
     3
 
     >>> add_integer(False, 2)
@@ -113,13 +111,13 @@ adding with data structures
             ...
     TypeError: a must be an integer
 
-testing for overflow
-    >>> add_integer(float(inf), 2)
-    Traceback (most recent call last):
-            ....
-    overflowError: cannot convert float infinity to integer
-
-    >>> add_integer(float(-inf), 2)
+checking overflow condition
+    >>> add_integer(1, float('inf'))
     Traceback (most recent call last):
             ...
-    overflowError: cannot convert float infinity to integer
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float('inf'), 1)
+    Traceback (most recent call last):
+            ...
+    OverflowError: cannot convert float infinity to integer
