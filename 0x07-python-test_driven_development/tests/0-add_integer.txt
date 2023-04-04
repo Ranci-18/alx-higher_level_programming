@@ -1,0 +1,125 @@
+#0-add_integer.py module
+
+#usage add_integer()
+
+add_integer function takes and adds two numbers and returns the resultant value from addition.
+'a' and 'b' must be integers or floats, otherwise, a TypeError is raised.
+'a' and 'b' are type casted first if they are float.
+default value of 'b' is '98'.
+
+Importing using:
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+
+Test Cases
+==========
+adding 1 and 2
+
+    >>> add_integer(1, 2)
+    3
+
+adding -1 and -2
+    >>> add_integer(-1, -2)
+    -3
+
+adding integer and float/float and integer
+
+    >>> add_integer(1, 2.2)
+    3
+
+    >>> add_integer(1.1, 2)
+    3
+
+adding positive and negative/negative and positive numbers
+
+    >>> add_integer(100.3, -2)
+    98
+
+    >>> add_integer(-2, 100.3)
+    98
+
+when a single value is passed, default value of b is used
+
+    >>> add_integer(2)
+    100
+
+when None is passed
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+            ...
+    TypeError: a must be an integer
+
+when NaN is passed
+    >>> add_integer(NaN)
+    Traceback (most recent call last):
+            ...
+    TypeError: a must be an integer
+
+passing a bool
+    >>> add_integer(True)
+    99
+
+    >>> add_integer(False)
+    98
+
+adding 2 and a bool
+    >>> add_integer(2, True)
+    3
+
+    >>> add_integer(False, 2)
+    2
+
+addition with a string/passing a string
+    >>> add_integer(2, "school")
+    Traceback (most recent call last):
+            ...
+    TypeError: b must be an integer
+
+    >>> add_integer("school")
+    Traceback (most recent call last):
+            ...
+    TypeError: a must be an integer
+
+passing data structures
+    >>> add_integer([])
+    Traceback (most recent call last):
+            ...
+    TypeError: a must be an integer
+
+    >>> add_integer(())
+    Traceback (most recent call last):
+            ...
+    TypeError: a must be an integer
+
+    >>> add_integer({})
+    Traceback (most recent call last):
+            ...
+    TypeError: a must be an integer
+
+adding with data structures
+    >>> add_integer([], 4)
+    Traceback (most recent call last):
+            ...
+    TypeError: a must be an integer
+
+    >>> add_integer((), 4)
+    Traceback (most recent call last):
+            ...
+    TypeError: a must be an integer
+
+    >>> add_integer({}, 4)
+    Traceback (most recent call last):
+            ...
+    TypeError: a must be an integer
+
+testing for overflow
+    >>> add_integer(float(inf), 2)
+    Traceback (most recent call last):
+            ....
+    overflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float(-inf), 2)
+    Traceback (most recent call last):
+            ...
+    overflowError: cannot convert float infinity to integer
