@@ -4,7 +4,7 @@
 
 class LockedClass:
     """Locked class with controlled attribute"""
-    __slot__ = ['first_name']
+    __slots__ = ['first_name']
 
     def __init__(self):
         """constructor"""
