@@ -1,4 +1,4 @@
-#!/usr/bin/python3                                                                                                                         
+#!/usr/bin/python3
 """creating a class Rectangle"""
 
 
@@ -6,7 +6,7 @@ class Rectangle:
     """Class Rectangle representing a rectangle"""
     def __init__(self, width=0, height=0):
         """Instantiation of object
-        Atributes: width and height                                                                                                    
+        Atributes: width and height
         """
         self.__width = width
         if not isinstance(self.__width, int):
