@@ -7,5 +7,5 @@ def lookup(obj):
     Returns:
         a list of attributes and methods
     """
-    list = [dir(obj)]
+    list = dir(obj)
     return list
