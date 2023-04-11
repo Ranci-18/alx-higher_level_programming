@@ -3,9 +3,9 @@
 
 
 def is_kind_of_class(obj, a_class):
-    """function checks if an object is 
+    """function checks if an object is
     of a superclass or subclass
-    
+
     Returns:
         True or False
     """
