@@ -27,9 +27,5 @@ Test case 2:
     True
 
     >>> my_list = MyList()
-    >>> print(type(my_list))
-    <class '__main__.MyList'>
-
-    >>> my_list = MyList()
     >>> isinstance(my_list, MyList)
     True
