@@ -1,0 +1,1 @@
+Directory contains project tasks pertaining to python inheritance, completed by dev Frank Ng'ng'a.
