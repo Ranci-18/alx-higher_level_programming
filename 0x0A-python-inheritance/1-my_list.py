@@ -9,4 +9,4 @@ class MyList(list):
         """Method prints sorted list
         """
         list = self[:]
-        print(sorted(list))
+        print(list.sort())
