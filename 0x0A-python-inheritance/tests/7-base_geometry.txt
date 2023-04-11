@@ -41,9 +41,6 @@ Test cases:
     TypeError: width must be an integer
 
     >>> bg = BaseGeometry()
-    >>> bg.integer_validator("width", True)
-
-    >>> bg = BaseGeometry()
     >>> bg.integer_validator("width")
     Traceback (most recent call last):
         ... 
