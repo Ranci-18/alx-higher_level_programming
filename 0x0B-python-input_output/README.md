@@ -1,0 +1,1 @@
+The directory contains project tasks pertaining to python input and output - file manipulations - completed by Dev. Frank Ng'ang'a.
