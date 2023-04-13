@@ -25,5 +25,5 @@ class Student:
                     my_dict[key] = self.__dict__[key]
                 except KeyError:
                     pass
-            return my_dict        
+            return my_dict
         return self.__dict__
