@@ -28,7 +28,6 @@ class Student:
             return my_dict
         return self.__dict__
 
-        
     def reload_from_json(self, json):
         """Method replaces all attributes of
         Student instance"""
