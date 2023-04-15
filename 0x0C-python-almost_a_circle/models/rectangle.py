@@ -113,10 +113,12 @@ class Rectangle(Base):
         """"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """"""
         if args is not None and len(args) != 0:
             attr_list = ['id', 'width', 'height', 'x', 'y']
             for i in range(len(args)):
                 setattr(self, attr_list[i], args[i])
-        
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
