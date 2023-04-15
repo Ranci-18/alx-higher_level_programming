@@ -98,10 +98,17 @@ class Rectangle(Base):
 
     def display(self):
         """"""
+        if self.__y > 0:
+            for i in range(self.__y):
+                print()
+            self.__y = 0
         for i in range(self.__height):
             for j in range(self.__width):
+                if self.__y == j:
+                    print(" " * self.__x, end="")
                 print('#', end="")
             print()
+
     def __str__(self):
         """"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
