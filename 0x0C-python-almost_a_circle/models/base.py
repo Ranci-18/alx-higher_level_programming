@@ -4,6 +4,7 @@
 
 import json
 import os
+import csv
 
 
 class Base:
@@ -76,3 +77,38 @@ class Base:
         dct_lst = cls.from_json_string(dct_str)
 
         return [cls.create(**dct) for dct in dct_lst]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Method serializes data to csv format"""
+        filename = cls.__name__ + ".csv"
+
+        with open(filename, 'w', newline='') as csvfile:
+            writer = csv.writer(csvfile)
+            if cls.__name__ == 'Rectangle':
+                for obj in list_objs:
+                    writer.writerow([obj.id, obj.width,
+                                     obj.height, obj.x, obj.y])
+            else:
+                for obj in list_objs:
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Method deserializes from csv file"""
+        filename = cls.__name__ + ".csv"
+
+        lst_obj = []
+        with open(filename, newline='') as csvfile:
+            reader = csv.reader(csvfile)
+            for row in reader:
+                if cls.__name__ == 'Rectangle':
+                    dct = {'id': int(row[0]), 'width': int(row[1]),
+                           'height': int(row[2]), 'x': int(row[3]),
+                           'y': int(row[4])}
+                elif cls.__name__ == 'Square':
+                    dct = {'id': int(row[0]), 'size': int(row[1]),
+                           'x': int(row[2]), 'y': int(row[3])}
+                obj = cls.create(**dct)
+                lst_obj.append(obj)
+        return lst_obj
