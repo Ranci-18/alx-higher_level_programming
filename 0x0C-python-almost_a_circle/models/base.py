@@ -42,10 +42,21 @@ class Base:
             with open('Rectangle.json', 'w') as R:
                 json.dump(j_list, R)
 
+    @staticmethod
     def from_json_string(json_string):
-        """"""
+        """Method returns the python object/dictionary list"""
         if json_string is None:
             mty_list = []
             return json.loads(json.dumps(mty_list))
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Method returns instance with attributes set"""
+        if cls.__name__ == "Rectangle":
+            dummy = cls(5, 5)
+        else:
+            dummy = cls(5)
+        dummy.update(**dictionary)
+        return dummy
