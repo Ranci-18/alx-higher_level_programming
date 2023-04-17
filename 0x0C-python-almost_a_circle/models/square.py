@@ -21,7 +21,7 @@ class Square(Rectangle):
     def size(self):
         """size getter"""
         return self.width
-    
+
     @size.setter
     def size(self, value):
         """size setter"""
@@ -49,11 +49,13 @@ class Square(Rectangle):
                     setattr(self, "height", value)
                 else:
                     setattr(self, key, value)
-    
+
     def __str__(self):
         """Method returns a string ready to print"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.size)
-
+        return "[Square] ({}) {}/{} - {}".format(self.id,
+                                                 self.x,
+                                                 self.y,
+                                                 self.size)
 
     def to_dictionary(self):
         """Method creates a dictionary list of attribute: value pairs"""

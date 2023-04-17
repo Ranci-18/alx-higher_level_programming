@@ -28,7 +28,7 @@ class Rectangle(Base):
         if height <= 0:
             raise TypeError("height must be > 0")
         self.height = height
-        
+
         if x < 0:
             raise ValueError("x must be >= 0")
         self.x = x
@@ -36,12 +36,12 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
         self.y = y
-    
+
     @property
     def width(self):
         """width getter"""
         return self.__width
-    
+
     @width.setter
     def width(self, value):
         """width setter"""
@@ -50,12 +50,12 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
-    
+
     @property
     def height(self):
         """height getter"""
         return self.__height
-    
+
     @height.setter
     def height(self, value):
         """height setter"""
@@ -64,12 +64,12 @@ class Rectangle(Base):
         if value <= 0:
             raise TypeError("height must be > 0")
         self.__height = value
-    
+
     @property
     def x(self):
         """x getter"""
         return self.__x
-    
+
     @x.setter
     def x(self, value):
         """x setter"""
@@ -83,7 +83,7 @@ class Rectangle(Base):
     def y(self):
         """y getter"""
         return self.__y
-    
+
     @y.setter
     def y(self, value):
         """y setter"""
@@ -112,7 +112,11 @@ class Rectangle(Base):
 
     def __str__(self):
         """Method retursn string to print"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                       self.__x,
+                                                       self.__y,
+                                                       self.__width,
+                                                       self.__height)
 
     def update(self, *args, **kwargs):
         """Method updates attribute arguments"""
@@ -133,5 +137,3 @@ class Rectangle(Base):
         rectangle_dict["x"] = self.x
         rectangle_dict["y"] = self.y
         return rectangle_dict
-
-    

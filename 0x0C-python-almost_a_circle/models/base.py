@@ -13,6 +13,7 @@ class Base:
         id
     """
     __nb_objects = 0
+
     def __init__(self, id=None):
         """instantiation of class object"""
         if id is not None:
@@ -71,10 +72,7 @@ class Base:
             return []
         with open(j_file, 'r') as file:
             dct_str = file.read()
-            
+
         dct_lst = cls.from_json_string(dct_str)
-        lst = []
-        
-        for i in range(len(dct_lst)):
-            lst.append(cls.create(**dct_lst[i]))
-        return lst
+
+        return [cls.create(**dct) for dct in dct_lst]
