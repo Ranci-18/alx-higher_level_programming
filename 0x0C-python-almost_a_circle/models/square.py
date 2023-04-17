@@ -47,3 +47,17 @@ class Square(Rectangle):
                     setattr(self, "height", value)
                 else:
                     setattr(self, key, value)
+    
+    def __str__(self):
+        """"""
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.size)
+
+
+    def to_dictionary(self):
+        """"""
+        square_dict = {}
+        square_dict["id"] = self.id
+        square_dict["size"] = self.width
+        square_dict["x"] = self.x
+        square_dict["y"] = self.y
+        return square_dict
