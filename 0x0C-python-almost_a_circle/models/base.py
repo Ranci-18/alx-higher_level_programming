@@ -3,6 +3,7 @@
 
 
 import json
+import os
 
 
 class Base:
@@ -22,7 +23,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """"""
+        """Method returns json string from a dictionary list"""
         if list_dictionaries is None:
             return "[]"
         return json.dumps(list_dictionaries)
@@ -60,3 +61,20 @@ class Base:
             dummy = cls(5)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Method returns a list of instances"""
+        j_file = cls.__name__ + ".json"
+
+        if os.path.exists(j_file) is False:
+            return []
+        with open(j_file, 'r') as file:
+            dct_str = file.read()
+            
+        dct_lst = cls.from_json_string(dct_str)
+        lst = []
+        
+        for i in range(len(dct_lst)):
+            lst.append(cls.create(**dct_lst[i]))
+        return lst
