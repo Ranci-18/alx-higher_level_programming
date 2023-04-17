@@ -29,7 +29,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """"""
+        """Class method saves list object to a file"""
         if list_objs is None:
             mty_lst = []
             with open('Rectangle.json', 'w') as R:
@@ -41,3 +41,11 @@ class Base:
                 j_list.append(json.loads(j_string))
             with open('Rectangle.json', 'w') as R:
                 json.dump(j_list, R)
+
+    def from_json_string(json_string):
+        """"""
+        if json_string is None:
+            mty_list = []
+            return json.loads(json.dumps(mty_list))
+        else:
+            return json.loads(json_string)
