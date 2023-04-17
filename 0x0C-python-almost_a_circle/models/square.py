@@ -19,12 +19,12 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        """"""
+        """size getter"""
         return self.width
     
     @size.setter
     def size(self, value):
-        """"""
+        """size setter"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -33,7 +33,7 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
-        """"""
+        """Method assigns attribute arguments"""
         if len(args) > 0 and args is not None:
             attr = ["id", "size", "x", "y"]
             for i in range(len(args)):
@@ -51,12 +51,12 @@ class Square(Rectangle):
                     setattr(self, key, value)
     
     def __str__(self):
-        """"""
+        """Method returns a string ready to print"""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.size)
 
 
     def to_dictionary(self):
-        """"""
+        """Method creates a dictionary list of attribute: value pairs"""
         square_dict = {}
         square_dict["id"] = self.id
         square_dict["size"] = self.width
