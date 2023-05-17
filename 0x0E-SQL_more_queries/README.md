@@ -1,0 +1,1 @@
+Directory contains more project tasks pertaining to SQl, completed by Dev Frank Ng'ang'a.
