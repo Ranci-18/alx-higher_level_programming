@@ -13,7 +13,7 @@ class Square extends square {
       for (i = 0; i < this.size; i++) {
         row = '';
         for (j = 0; j < this.size; j++) {
-          row += 'C';
+          row += 'c';
         }
         console.log(row);
       }
