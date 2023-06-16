@@ -24,3 +24,8 @@ $ python3
 >>> sqlalchemy.__version__ 
 '1.4.22'
 ```
+Author
+------
++ Frank Ng'ang'a
++ wanyoike39@gmail.com
++ +254715353197
