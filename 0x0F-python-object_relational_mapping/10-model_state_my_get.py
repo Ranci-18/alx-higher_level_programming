@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""script to list all states with the
-letter 'a' in hbtn_0e_6_usa using sqlalchemy"""
+"""script to list state object passed as argument
+in hbtn_0e_6_usa using sqlalchemy"""
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
