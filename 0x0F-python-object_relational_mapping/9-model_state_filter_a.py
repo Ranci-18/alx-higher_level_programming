@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""script to list all states with the letter 'a' in hbtn_0e_6_usa using sqlalchemy"""
+"""script to list all states with the
+letter 'a' in hbtn_0e_6_usa using sqlalchemy"""
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
@@ -13,6 +14,7 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     sess = Session()
-    for state in sess.query(State).filter(State.name.like('%a%')).order_by(State.id):
+    for state in sess.query(State).filter(State.name.like('%a%'))\
+            .order_by(State.id):
         print("{}: {}".format(state.id, state.name))
     sess.close()
