@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Python script to list 10 commits from recent to oldest
-of user rails and repo rails takes 2 arguments in order to solve this challenge.
+of user rails and repo rails takes 2 arguments in
+order to solve this challenge.
 The first argument will be the repository name
 The second argument will be the owner name"""
 import requests
@@ -15,4 +16,5 @@ if __name__ == "__main__":
     commits = response.json()
     for i in range(10):
         print("{}: {}".format(commits[i].get("sha"),
-                              commits[i].get("commit").get("author").get("name")))
+                              commits[i].get("commit")
+                                        .get("author").get("name")))
