@@ -11,7 +11,5 @@ request.get(url, (err, response, body) => {
       if (content.results[i].characters.includes(characterIdUrl)) { count += 1; }
     }
     console.log(count);
-  } else {
-    console.log(err);
   }
 });
